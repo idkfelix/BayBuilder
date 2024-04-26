@@ -47,6 +47,7 @@
 
 <section>
 	<input
+    class="w-full"
 		placeholder="Search Items"
 		bind:value={query}
     on:change={async() => {
