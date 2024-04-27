@@ -1,5 +1,4 @@
 <script>
-  import "../app.css";
   import Piece from '$lib/Piece.svelte'
   import Create from '$lib/Create.svelte';
 	import Manage from '$lib/Manage.svelte'

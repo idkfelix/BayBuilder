@@ -1,4 +1,5 @@
 <script>
+  import "../app.css"; 
   import Modal from "svelte-simple-modal";
   import { setContext } from 'svelte';
   import { writable } from 'svelte/store';
