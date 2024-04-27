@@ -7,14 +7,13 @@
   <h3 class="text-2xl mb-2">
     Create New
   </h3>
-  <div class="flex flex-col">
+  <div class="flex flex-col overflow-y-scroll max-h-[550px]">
     {#each refs as ref}
       <button
         class="btn"
         on:click={() => 
           pieces = [...pieces, {...ref,
               colour: `hsl(${Math.floor(Math.random() * 360)}, 40%, 70%)`,
-              editing: false,
               pos: {x:0, y:0}, 
           }]
         }

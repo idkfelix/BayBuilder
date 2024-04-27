@@ -15,12 +15,12 @@
                 src="https://cdn.fasttimes.com.au/media/mf_webp/png/media/logo/stores/1/fasttimes-logo.webp" 
             alt="">
             <h1 class="text-3xl font-bold">
-                Bay Builder 9000
+                Bay Builder
             </h1>
         </header>
         <slot/>
         <footer class="mt-auto m-4">
-            <p>Made by <a href="https://instagram.com/via.cityloop">Felix from Eastland</a></p>
+            <p>Made with ❤️ by <a href="https://instagram.com/via.cityloop">Felix from Eastland</a></p>
         </footer>
     </div>
 </Modal>
