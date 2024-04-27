@@ -11,14 +11,16 @@
 	</h3>
 	<div class="flex flex-col">
     <button on:click|preventDefault={() => {pieces = []}}
-      class="bg-red-600"  
+      class="btn !bg-red-600"  
     >
-			Clear All Pieces
-		</button>
+		Clear All Pieces
+	</button>
 		{#each pieces as p, index}
-      <button on:click|preventDefault={() => remove(index)}>
-        {p.name} ({index})
-      </button>
+			<button on:click|preventDefault={() => remove(index)}
+				class="btn !bg-red-900"
+			>
+				{p.name} {#if !p.img} ({index}) {/if}
+			</button>
 		{/each}
 	</div>
 </div>

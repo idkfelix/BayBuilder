@@ -22,9 +22,10 @@
   <div class="flex flex-col">
     {#each refs as ref}
       <button
+        class="btn"
         on:click={() => 
           pieces = [...pieces, {...ref,
-              colour: `hsl(${Math.floor(Math.random() * 360)}, 40%, 60%)`,
+              colour: `hsl(${Math.floor(Math.random() * 360)}, 40%, 70%)`,
               editing: false,
               pos: {x:0, y:0}, 
           }]
