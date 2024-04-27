@@ -19,7 +19,7 @@
 
 <style lang="postcss">
   .bay {
-    background-image: repeating-linear-gradient(to bottom, black, black 2px, #e8e8e8 1px, #e8e8e8 10px);
+    background-image: repeating-linear-gradient(to bottom, gray, gray 2px, #e8e8e8 1px, #e8e8e8 10px);
     background-position: 0 4px;
   }
 

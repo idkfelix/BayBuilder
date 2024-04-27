@@ -27,7 +27,7 @@
   class="absolute text-center text-sm text-black font-medium flex flex-col {p.img && 'p-1'}"
 	style="
 		height: {p.height * 10}px; 
-		width: {p.full ? 240 : 120}px; 
+		width: {p.width * 240}px; 
 		background: {p.colour}
   "
 >

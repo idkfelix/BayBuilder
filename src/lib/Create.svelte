@@ -1,18 +1,6 @@
 <script>	
+  import {refs} from '$lib/refs.js'
 	export let pieces
-
-	let refs = [
-    { name: 'Shelf', height: 2, full: false },
-    { name: 'Full Shelf', height: 2, full: true },
-    { name: 'T-Shirt Bar', height: 18, full: false },
-    { name: 'Pants Bar', height: 22, full: false },
-    { name: 'Cage Grid', height: 20, full: false },
-    { name: 'T-Shirt', height: 16, full: false },
-    { name: 'Waterfall Tee', height: 20, full: false },
-    { name: 'Hoodie', height: 18, full: false },
-    { name: 'Waterfall Hood', height: 22, full: false }
-  ]
-
 </script>
 
 <div class="mx-6 w-48 text-center font-bold">
