@@ -7,6 +7,10 @@
   setContext('modal',modal);
 </script>
 
+<svelte:head>
+  <link rel="shortcut icon" href="https://cdn.fasttimes.com.au/media/favicon/stores/1/fast-times-icon.ico" type="image/x-icon">
+</svelte:head>
+
 <Modal show={$modal}>
     <div class="min-h-[100dvh] flex flex-col">
         <header class="mx-auto mt-6 flex items-center">

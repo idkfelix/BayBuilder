@@ -1,16 +1,15 @@
 <script>
-  import { page } from '$app/stores';
+  import { page } from '$app/stores'
+  import JSONCrush from 'jsoncrush'
   import Piece from '$lib/Piece.svelte'
-  import Create from '$lib/Create.svelte';
+  import Create from '$lib/Create.svelte'
 	import Manage from '$lib/Manage.svelte'
-
-  let pieces = []
-  let bayHeight = 60
-
-  let conf = $page.url.searchParams
-  if(conf.get('conf')){
-    pieces = JSON.parse(atob(conf.get('conf')))
-  }
+  
+  let bayHeight = $page.url.searchParams.get('height') ?? 60
+  let pieces = (() => {
+    let conf = $page.url.searchParams.get('conf')
+    return conf ? JSON.parse(JSONCrush.uncrush(conf)) : []
+  })()
 </script>
 
 <div class="flex justify-center p-8 min-w-full">
