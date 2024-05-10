@@ -4,27 +4,34 @@
   import Piece from '$lib/Piece.svelte'
   import Create from '$lib/Create.svelte'
 	import Manage from '$lib/Manage.svelte'
+  import Three from '$lib/Three.svelte'
   
   let bayHeight = $page.url.searchParams.get('height') ?? 60
   let pieces = (() => {
     let conf = $page.url.searchParams.get('conf')
     return conf ? JSON.parse(JSONCrush.uncrush(conf)) : []
   })()
+
+  let td = false
 </script>
 
-<div class="flex justify-center p-8 min-w-full">
-  <Create bind:pieces/>
-  <div>
-    <div 
-      class="min-w-[240px] outline outline-4 shadow-2xl bay" 
-      style="height: {bayHeight * 10}px"
-    >
-      {#each pieces as p, index}
-        <Piece bind:p bind:pieces {index}/>
-      {/each}
+<div class="flex justify-center min-w-full p-8">
+  {#if td}
+    <Three bind:pieces/>
+  {:else}
+    <Create bind:pieces/>
+    <div>
+      <div 
+        class="min-w-[240px] outline outline-4 shadow-2xl bay" 
+        style="height: {bayHeight * 10}px"
+      >
+        {#each pieces as p, index}
+          <Piece bind:p bind:pieces {index}/>
+        {/each}
+      </div>
     </div>
-  </div>
-  <Manage bind:bayHeight bind:pieces/>
+  {/if}
+  <Manage bind:bayHeight bind:pieces bind:td/>
 </div>
 
 <style lang="postcss">
