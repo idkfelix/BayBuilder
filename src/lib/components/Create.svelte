@@ -1,10 +1,10 @@
 <script>	
-  import {refs} from '$lib/refs.js'
-	export let pieces
+  import { refs } from '$lib/data/refs.js'
+  import { pieces } from '$lib/stores'
 </script>
 
-<div class="mx-6 w-48 text-center font-bold">
-  <h3 class="text-2xl mb-2">
+<div class="w-full mx-6 font-bold text-center">
+  <h3 class="mb-2 text-2xl">
     Create New
   </h3>
   <div class="flex flex-col overflow-y-scroll max-h-[550px]">
@@ -12,10 +12,10 @@
       <button
         class="btn"
         on:click={() => 
-          pieces = [...pieces, {...ref,
+          pieces.set([...$pieces, {...ref,
               colour: `hsl(${Math.floor(Math.random() * 360)}, 40%, 70%)`,
               pos: {x:0, y:0}, 
-          }]
+          }])
         }
       > {ref.name} </button>
     {/each}

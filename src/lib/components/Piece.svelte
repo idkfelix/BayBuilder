@@ -1,12 +1,13 @@
 <script>
 	import { draggable } from '@neodrag/svelte';
   import { getContext } from 'svelte';
+  import { pieces } from '$lib/stores'
+
   const { open } = getContext('simple-modal')
-  import Search from '$lib/Search.svelte'
+  import Search from '$lib/components/Search.svelte'
 
 	export let p
 	export let index
-  export let pieces
 
   const showModal = () => open(Search,{
     onOkay: (item) => {
@@ -14,7 +15,7 @@
     }
   },{ closeButton: false });
 
-  const remove = () => {pieces = pieces.filter((_, i) => i !== index)}
+  const remove = () => {pieces.set($pieces.filter((_, i) => i !== index))}
 </script>
 
 <div 
@@ -45,7 +46,7 @@
     {#if p.height > 2 && !p.noBtn}
       {#if p.width >= 0.5}
         <button
-          class="my-auto m-2 p-1 bg-white outline"
+          class="p-1 m-2 my-auto bg-white outline"
           on:click={showModal}
         >Select Item</button>
       <!-- Plus button if thin -->

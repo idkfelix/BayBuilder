@@ -1,5 +1,5 @@
-<script>
-  import "../app.css"; 
+<script> 
+  import '../app.css'
   import Modal from "svelte-simple-modal";
   import { setContext } from 'svelte';
   import { writable } from 'svelte/store';
@@ -12,19 +12,35 @@
 </svelte:head>
 
 <Modal show={$modal}>
-    <div class="min-h-[100dvh] flex flex-col">
-        <header class="mx-auto mt-6 flex items-center">
-            <img 
-                class="w-14 mr-4"
-                src="https://cdn.fasttimes.com.au/media/mf_webp/png/media/logo/stores/1/fasttimes-logo.webp" 
-            alt="">
-            <h1 class="text-3xl font-bold">
-                Bay Builder
-            </h1>
-        </header>
-        <slot/>
-        <footer class="mt-auto m-4">
-            <p>Made with ❤️ by <a href="https://instagram.com/via.cityloop">Felix from Eastland</a></p>
-        </footer>
-    </div>
+  <div class="h-[100dvh] flex flex-col">
+    <!-- Header -->
+    <a href="/" class="flex items-center mx-auto mt-6">
+      <img 
+          class="mr-4 w-14"
+          src="https://cdn.fasttimes.com.au/media/mf_webp/png/media/logo/stores/1/fasttimes-logo.webp" 
+      alt="">
+      <h1 class="text-3xl font-bold">
+          Bay Builder
+      </h1>
+    </a>
+    <!-- Page -->
+    <main class="w-[800px] max-h-full mx-auto m-8 flex-grow">
+      <slot/>
+    </main>
+    <!-- Footer -->
+    <footer class="m-4 mt-auto">
+        <p>Made with ❤️ by <a href="https://instagram.com/via.cityloop">Felix from Eastland</a></p>
+    </footer>
+  </div>
 </Modal>
+
+<style lang="postcss">
+  :global(.btn) {
+    @apply bg-black hover:scale-[1.02] transition-all ease-in-out font-medium text-white py-2 px-4 shadow m-1
+  }
+
+  :global(body) {
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    letter-spacing: 0.018em;
+  }
+</style>
