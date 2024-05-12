@@ -13,7 +13,7 @@
 </script>
 
 <Camera />
-<Sky elevation={0.5} azimuth={-45}/>
+<Sky elevation={3} azimuth={-45}/>
 
 <Backdrop {height} z={-0.3}/>
 
