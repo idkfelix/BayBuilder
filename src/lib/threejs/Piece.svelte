@@ -1,20 +1,48 @@
 <script>
   import { T } from '@threlte/core'
-  export let P
+  import { GLTF } from '@threlte/extras';
 
-  $: width = P.width * 2.4
-  $: height = P.height / 10
-  $: posY = P.pos.y / -100 - height / 2
-  $: posX = P.pos.x / 100 + width / 2
+  export let P
+  export let i
+
+  $: height = P.height *0.12
+  $: width = P.width *2.4
+  $: posY = P.pos.y *-0.012
+  $: posX = P.pos.x /100 + width /2
 </script>
 
-<T.Mesh 
-  castShadow
-  receiveShadow
-  position.z={(width < 0.5) ? 0.1 : 0}
-  position.y={posY}
-  position.x={posX}
->
-  <T.BoxGeometry args={[width, height, 0.1]} />
-  <T.MeshStandardMaterial color={P.colour} />
-</T.Mesh>
+{#if P.model}
+  <GLTF
+    castShadow
+    receiveShadow
+    position.y={posY}
+    position.x={posX}
+    url={P.model+'?'+i}
+    scale={2}
+  />
+  <T.Mesh 
+    castShadow
+    receiveShadow
+    position.y={posY}
+    position.x={1.2}
+  >
+    <T.BoxGeometry args={[2.4, 0.1, 0.05]} />
+    <T.MeshStandardMaterial 
+      color={"#222"}
+      metalness={0.6}
+      roughness={0.05}
+      envMapIntensity={0.5}
+    />
+  </T.Mesh>
+{:else}
+  <T.Mesh 
+    castShadow
+    receiveShadow
+    position.z={(width < 0.5) ? 0.1 : 0}
+    position.y={posY - height /2}
+    position.x={posX}
+  >
+    <T.BoxGeometry args={[width, height, 0.1]} />
+    <T.MeshStandardMaterial color={P.colour} />
+  </T.Mesh>
+{/if}

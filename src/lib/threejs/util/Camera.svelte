@@ -10,7 +10,6 @@
 >
   <OrbitControls 
     enableDamping
-    enablePan={false}
     minAzimuthAngle={DEG2RAD *-60}
     maxAzimuthAngle={DEG2RAD *60}
     minPolarAngle={DEG2RAD *45}

@@ -1,14 +1,15 @@
 <script>
   import { pieces, bayHeight } from '$lib/stores.js'
   import { T } from '@threlte/core'
-  import { Sky } from '@threlte/extras'
+  import { Sky, GLTF } from '@threlte/extras'
+  import { DEG2RAD } from 'three/src/math/MathUtils';
 
   import Camera from '$lib/threejs/util/Camera.svelte';
   import Backdrop from '$lib/threejs/Backdrop.svelte';
   import Pole from '$lib/threejs/Pole.svelte';
   import Piece from '$lib/threejs/Piece.svelte';
 
-  let height = $bayHeight /10
+  let height = $bayHeight *0.12
 </script>
 
 <Camera />
@@ -21,10 +22,11 @@
 {/each}
 
 <T.Group 
-  position.y = {6}
+  position.y = {height}
   position.x = {-1.2}
+  position.z = {0.05}
 >
-  {#each $pieces as P}
-    <Piece {P} />
+  {#each $pieces as P, i}
+    <Piece {height} {P} {i}/>
   {/each}
 </T.Group>

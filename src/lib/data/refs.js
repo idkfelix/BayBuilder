@@ -1,11 +1,13 @@
 export const refs = [
     { 
       name: 'Shelf', 
+      model: '/half-shelf.glb',
       height: 2, 
       width: 0.5
     },
     { 
       name: 'Full Shelf', 
+      model: '/full-shelf.glb',
       height: 2, 
       width: 1 
     },
@@ -17,33 +19,51 @@ export const refs = [
     },
     { 
       name: 'T-Shirt', 
+      model: '/front.glb',
       height: 16, 
       width: 0.5 
     },
     { 
       name: 'Hoodie', 
+      model: '/front.glb',
       height: 18, 
       width: 0.5 
     },
     { 
       name: 'Waterfall T-Shirt', 
+      model: '/waterfall.glb',
       height: 20, 
       width: 0.5 
     },
     { 
       name: 'Waterfall Hoodie',
+      model: '/waterfall.glb',
       height: 22, 
       width: 0.5 
     },
     { 
       name: 'T-Shirt Bar', 
+      model: '/half-bar.glb',
       height: 18, 
       width: 0.5 
     },
     { 
       name: 'Pants Bar', 
+      model: '/half-bar.glb',
       height: 22, 
       width: 0.5 
+    },
+    { 
+      name: 'T-Shirt Full Bar', 
+      model: '/full-bar.glb',
+      height: 18, 
+      width: 1 
+    },
+    { 
+      name: 'Pants Full Bar', 
+      model: '/full-bar.glb',
+      height: 22, 
+      width: 1 
     },
     { 
       name: 'Hat',

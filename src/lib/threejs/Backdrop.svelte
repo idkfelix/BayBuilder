@@ -41,9 +41,9 @@
   <T.Mesh 
     castShadow
     receiveShadow
-    position.y={height/2+0.1}
+    position.y={height/2}
   >
-    <T.BoxGeometry args={[width, height+0.2, 0.1]} />
+    <T.BoxGeometry args={[width, height, 0.1]} />
     <T.MeshStandardMaterial {...$wallTex} />
   </T.Mesh>
 
