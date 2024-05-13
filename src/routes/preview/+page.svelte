@@ -1,13 +1,10 @@
 <script>
   import { Canvas, T } from '@threlte/core'
-  import { Suspense, CSM } from '@threlte/extras'
-  import { bayHeight } from '$lib/stores.js'
+  import { Suspense, CSM, Align } from '@threlte/extras'
 
   import Renderer from '$lib/web3d/util/Renderer.svelte'
-  import Scene from '$lib/web3d/Scene.svelte';
-  import Camera from '$lib/web3d/util/Camera.svelte';
-
-  $: _bayHeight = $bayHeight * 0.12
+  import Scene from '$lib/web3d/Scene.svelte'
+  import Camera from '$lib/web3d/util/Camera.svelte'
 </script>
 
 <div class="outline outline-4 relative max-w-[1000px] mx-auto min-h-full shadow-2xl">
@@ -25,10 +22,10 @@
         lightDirection={[1, -1, -1]}
         lightIntensity={5}
       >
-        <T.Group position.y={_bayHeight / -2}>
-          <Camera />
+        <Camera />
+        <Align>
           <Scene />
-        </T.Group>
+        </Align>
       </CSM>
     </Suspense>
   </Canvas>

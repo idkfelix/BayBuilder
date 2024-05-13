@@ -1,8 +1,13 @@
 <script>
   import { T } from '@threlte/core'
-  import { GLTF } from '@threlte/extras';
+  import { GLTF, TransformControls, interactivity } from '@threlte/extras';
+  interactivity()
 
   export let p
+
+  let gltf
+  let transform = false
+  let timeout
 
   $: posY = p.coord.y /-10 *0.12
   $: posX = p.coord.x /100
@@ -15,7 +20,21 @@
     position={[posX,posY]}
     url={p.model+'?'+Math.random()}
     scale={2}
-  />
+    let:ref={gltf}
+    interactive
+    on:click={()=>{
+      if(!timeout){
+        transform = !transform
+        timeout = true
+        setTimeout(()=>{timeout = false}, 5)
+      }
+    }}
+  >
+    {#if transform}
+      <TransformControls object={gltf} />
+    {/if}
+  </GLTF>
+
   <T.Mesh 
     castShadow
     receiveShadow

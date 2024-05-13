@@ -1,7 +1,6 @@
 <script>
   import { T } from '@threlte/core'
   import { Sky } from '@threlte/extras'
-  import { MeshStandardMaterial } from 'three'
   import { pieces, bayHeight } from '$lib/stores.js'
 
   import Backdrop from '$lib/web3d/Backdrop.svelte';
@@ -23,12 +22,12 @@
       receiveShadow
     >   
       <T.CylinderGeometry args={[0.07, 0.07, _bayHeight, 8]} />
-      <T is={new MeshStandardMaterial({
-        color: "#222",
-        metalness: 0.6,
-        roughness: 0.05,
-        envMapIntensity: 0.5
-      })} />
+      <T.MeshStandardMaterial 
+        color={"#222"}
+        metalness={0.6}
+        roughness={0.05}
+        envMapIntensity={0.5}
+      />
     </T.Mesh>
   </T.Group>
 {/each}
