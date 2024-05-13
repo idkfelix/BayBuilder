@@ -15,13 +15,12 @@
   </a>
   <Canvas>
     <Renderer />
-    <Camera />
+    <Camera/>
     <Suspense>
       <CSM 
-        enabled={true}
         args={{mode: 'logarithmic'}}
         lightDirection={[1, -1, -1]}
-        lightIntensity={5}
+        lightIntensity={10}
       >
         <Align>
           <Scene />

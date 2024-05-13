@@ -95,4 +95,72 @@ export const refs = [
   },
 ]
 
-export const initial = [{"name":"T-Shirt","model":"/front.glb","height":16,"width":0.5,"colour":"hsl(251, 40%, 70%)","coord":{"x":60,"y":0}},{"name":"Waterfall T-Shirt","model":"/waterfall.glb","height":20,"width":0.5,"colour":"hsl(357, 40%, 70%)","coord":{"x":-60,"y":0}},{"name":"Cage Grid","model":"/cage.glb","height":20,"width":0.5,"noBtn":true,"colour":"hsl(283, 40%, 70%)","coord":{"x":-60,"y":210}},{"name":"Full Shelf","model":"/full-shelf.glb","height":2,"width":1,"colour":"hsl(274, 40%, 70%)","coord":{"x":0,"y":190}},{"name":"Waterfall T-Shirt","model":"/waterfall.glb","height":20,"width":0.5,"colour":"hsl(212, 40%, 70%)","coord":{"x":60,"y":210}},{"name":"T-Shirt Full Bar","model":"/full-bar.glb","height":18,"width":1,"colour":"hsl(330, 40%, 70%)","coord":{"x":0,"y":410}}]
+export const initial = [
+  {
+    "name":"T-Shirt",
+    "model":"/front.glb",
+    "height":16,
+    "width":0.5,
+    "colour":"hsl(251, 40%, 70%)",
+    "coord":{
+      "x":60,
+      "y":0
+    }
+  },
+  {
+    "name":"Waterfall T-Shirt",
+    "model":"/waterfall.glb",
+    "height":20,
+    "width":0.5,
+    "colour":"hsl(357, 40%, 70%)",
+    "coord":{
+      "x":-60,
+      "y":0
+    }
+  },
+  {
+    "name":"Cage Grid",
+    "model":"/cage.glb",
+    "height":20,
+    "width":0.5,
+    "noBtn":true,
+    "colour":"hsl(283, 40%, 70%)",
+    "coord":{
+      "x":-60,
+      "y":210
+    }
+  },
+  {
+    "name":"Full Shelf",
+    "model":"/full-shelf.glb",
+    "height":2,
+    "width":1,
+    "colour":"hsl(274, 40%, 70%)",
+    "coord":{
+      "x":0,
+      "y":190
+    }
+  },
+  {
+    "name":"Waterfall T-Shirt",
+    "model":"/waterfall.glb",
+    "height":20,
+    "width":0.5,
+    "colour":"hsl(212, 40%, 70%)",
+    "coord":{
+      "x":60,
+      "y":210
+    }
+  },
+  {
+    "name":"T-Shirt Full Bar",
+    "model":"/full-bar.glb",
+    "height":18,
+    "width":1,
+    "colour":"hsl(330, 40%, 70%)",
+    "coord":{
+      "x":0,
+      "y":410
+    }
+  }
+]

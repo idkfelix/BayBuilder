@@ -4,10 +4,10 @@
   import { DEG2RAD } from 'three/src/math/MathUtils.js'
 </script>
 
-<T.PerspectiveCamera
+<T.OrthographicCamera
   makeDefault
   position={[5, 3, 10]}
-  near={1}
+  zoom={75}
 >
   <OrbitControls 
     enableDamping
@@ -17,5 +17,5 @@
     minPolarAngle={DEG2RAD *45}
     maxPolarAngle={DEG2RAD *90}
   />
-</T.PerspectiveCamera>
+</T.OrthographicCamera>
 

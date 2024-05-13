@@ -2,13 +2,16 @@
   import { T } from '@threlte/core'
   import { Sky, GLTF } from '@threlte/extras'
   import { pieces, bayHeight } from '$lib/stores.js'
-  
+
   import Piece from '$lib/web3d/Piece.svelte';
 
   $: _bayHeight = $bayHeight * 0.12
 </script>
 
-<Sky elevation={2} azimuth={-45}/>
+<Sky 
+  elevation={2.5} 
+  azimuth={-45}
+/>
 
 <GLTF 
   position.z={-0.3}
