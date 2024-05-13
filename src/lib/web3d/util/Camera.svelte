@@ -7,9 +7,11 @@
 <T.PerspectiveCamera
   makeDefault
   position={[5, 3, 10]}
+  near={1}
 >
   <OrbitControls 
     enableDamping
+    enablePan={false}
     minAzimuthAngle={DEG2RAD *-60}
     maxAzimuthAngle={DEG2RAD *60}
     minPolarAngle={DEG2RAD *45}

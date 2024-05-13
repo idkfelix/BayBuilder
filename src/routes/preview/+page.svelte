@@ -1,5 +1,5 @@
 <script>
-  import { Canvas, T } from '@threlte/core'
+  import { Canvas } from '@threlte/core'
   import { Suspense, CSM, Align } from '@threlte/extras'
 
   import Renderer from '$lib/web3d/util/Renderer.svelte'
@@ -8,13 +8,14 @@
 </script>
 
 <div class="outline outline-4 relative max-w-[1000px] mx-auto min-h-full shadow-2xl">
-  <a href="/" class="right-2 absolute m-2">
-    <button class="btn w-full">
+  <a href="/" class="absolute m-2 right-2">
+    <button class="w-full btn">
       Go Back
     </button>
   </a>
   <Canvas>
     <Renderer />
+    <Camera />
     <Suspense>
       <CSM 
         enabled={true}
@@ -22,7 +23,6 @@
         lightDirection={[1, -1, -1]}
         lightIntensity={5}
       >
-        <Camera />
         <Align>
           <Scene />
         </Align>
