@@ -2,21 +2,18 @@
   import { T } from '@threlte/core'
   import { GLTF } from '@threlte/extras';
 
-  export let P
-  export let i
+  export let p
 
-  $: height = P.height *0.12
-  $: width = P.width *2.4
-  $: posY = P.coord.y /-10 *0.12
-  $: posX = P.coord.x / 100
+  $: posY = p.coord.y /-10 *0.12
+  $: posX = p.coord.x /100
 </script>
 
-{#if P.model}
+{#if p.model}
   <GLTF
     castShadow
     receiveShadow
     position={[posX,posY]}
-    url={P.model+'?'+i}
+    url={p.model+'?'+Math.random()}
     scale={2}
   />
   <T.Mesh 
@@ -31,16 +28,5 @@
       roughness={0.05}
       envMapIntensity={0.5}
     />
-  </T.Mesh>
-{:else}
-  <T.Mesh 
-    castShadow
-    receiveShadow
-    position.z={(width < 0.5) ? 0.1 : 0}
-    position.y={posY - height /2}
-    position.x={posX}
-  >
-    <T.BoxGeometry args={[width, height, 0.1]} />
-    <T.MeshStandardMaterial color={P.colour} />
   </T.Mesh>
 {/if}

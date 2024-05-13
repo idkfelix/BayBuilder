@@ -1,5 +1,5 @@
 <script>	
-  import { refs } from '$lib/data/refs.js'
+  import { refs } from '$lib/constants.js'
   import { pieces } from '$lib/stores'
 </script>
 
@@ -12,10 +12,13 @@
       <button
         class="btn"
         on:click={() => 
-          pieces.set([...$pieces, {...ref,
-            colour: `hsl(${Math.floor(Math.random() * 360)}, 40%, 70%)`,
-            coord: {x: 0, y: 0},
-          }])
+          pieces.set([...$pieces, 
+            {
+              ...ref,
+              colour: `hsl(${Math.floor(Math.random() * 360)}, 40%, 70%)`,
+              coord: {x: 0, y: 0},
+            }
+          ])
         }
       > {ref.name} </button>
     {/each}

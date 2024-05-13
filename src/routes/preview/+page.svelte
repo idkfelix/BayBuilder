@@ -1,8 +1,13 @@
 <script>
   import { Canvas, T } from '@threlte/core'
   import { Suspense, CSM } from '@threlte/extras'
-  import Renderer from '$lib/threejs/util/Renderer.svelte'
-  import Scene from '$lib/threejs/Scene.svelte';
+  import { bayHeight } from '$lib/stores.js'
+
+  import Renderer from '$lib/web3d/util/Renderer.svelte'
+  import Scene from '$lib/web3d/Scene.svelte';
+  import Camera from '$lib/web3d/util/Camera.svelte';
+
+  $: _bayHeight = $bayHeight * 0.12
 </script>
 
 <div class="outline outline-4 relative max-w-[1000px] mx-auto min-h-full shadow-2xl">
@@ -12,18 +17,16 @@
     </button>
   </a>
   <Canvas>
-    <!-- Post-Process -->
     <Renderer />
     <Suspense>
-      <!-- Cascading Shadows -->
       <CSM 
         enabled={true}
         args={{mode: 'logarithmic'}}
         lightDirection={[1, -1, -1]}
         lightIntensity={5}
       >
-        <!-- Shift scene to center -->
-        <T.Group position.y={-3}>
+        <T.Group position.y={_bayHeight / -2}>
+          <Camera />
           <Scene />
         </T.Group>
       </CSM>

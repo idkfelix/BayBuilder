@@ -1,4 +1,4 @@
-import { writable } from 'svelte/store';
+import { derived, writable } from 'svelte/store';
 
 export const pieces = writable([]);
 export const bayHeight = writable(60);
