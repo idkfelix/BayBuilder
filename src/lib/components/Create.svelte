@@ -13,8 +13,8 @@
         class="btn"
         on:click={() => 
           pieces.set([...$pieces, {...ref,
-              colour: `hsl(${Math.floor(Math.random() * 360)}, 40%, 70%)`,
-              pos: {x:0, y:0}, 
+            colour: `hsl(${Math.floor(Math.random() * 360)}, 40%, 70%)`,
+            coord: {x: 0, y: 0},
           }])
         }
       > {ref.name} </button>

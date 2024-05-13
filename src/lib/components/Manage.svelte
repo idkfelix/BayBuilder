@@ -1,6 +1,6 @@
 <script>
   import { pieces, bayHeight } from '$lib/stores'
-  import { presets } from '$lib/data/presets.js'
+  // import { presets } from '$lib/data/presets.js'
   import Share from './Share.svelte';
 </script>
 
@@ -25,13 +25,15 @@
   <h3 class="my-2 text-2xl">
 		Presets
 	</h3>
-  {#each presets as preset, index}
+  <!-- {#each presets as preset, index}
     <button on:click={()=>{pieces.set(preset)}}
       class="w-full btn !bg-gray-200 !text-black outline"
     >
       Preset {index}
     </button>
-  {/each}
+  {/each} -->
 
   <Share />
+
+  <!-- {JSON.stringify($pieces)} -->
 </div>

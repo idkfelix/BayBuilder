@@ -7,24 +7,22 @@
 
   $: height = P.height *0.12
   $: width = P.width *2.4
-  $: posY = P.pos.y *-0.012
-  $: posX = P.pos.x /100 + width /2
+  $: posY = P.coord.y /-10 *0.12
+  $: posX = P.coord.x / 100
 </script>
 
 {#if P.model}
   <GLTF
     castShadow
     receiveShadow
-    position.y={posY}
-    position.x={posX}
+    position={[posX,posY]}
     url={P.model+'?'+i}
     scale={2}
   />
   <T.Mesh 
     castShadow
     receiveShadow
-    position.y={posY}
-    position.x={1.2}
+    position={[0, posY]}
   >
     <T.BoxGeometry args={[2.4, 0.1, 0.05]} />
     <T.MeshStandardMaterial 

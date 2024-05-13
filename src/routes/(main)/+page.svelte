@@ -5,10 +5,10 @@
 	import Manage from '$lib/components/Manage.svelte'
 </script>
 
-<div class="flex w-full">
+<div class="flex w-[800px] mx-auto">
   <Create/>
   <div 
-    class="min-w-[240px] outline outline-4 shadow-2xl bay" 
+    class="min-w-[240px] outline outline-4 shadow-2xl bay grid justify-items-center" 
     style="height: {$bayHeight * 10}px"
   >
     {#each $pieces as p, index}

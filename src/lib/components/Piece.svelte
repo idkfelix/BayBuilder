@@ -22,10 +22,8 @@
 	use:draggable={{ 
 		grid: [10, 10], 
 		bounds: 'parent',
-		position: p.pos,
-    onDrag: ({ offsetX, offsetY }) => {
-      p.pos = { x: offsetX, y: offsetY };
-    },
+		position: p.coord,
+    onDrag: ({ offsetX, offsetY }) => {p.coord = { x: offsetX, y: offsetY }},
 	}}
   class="absolute text-center text-sm text-black flex flex-col {(p.width >= 0.5 && p.img) ? 'p-1' : 'p-0.5'}"
 	style="
@@ -46,7 +44,7 @@
     {#if p.height > 2 && !p.noBtn}
       {#if p.width >= 0.5}
         <button
-          class="p-1 m-2 my-auto bg-white outline"
+          class="outline p-1 m-2 my-auto bg-white"
           on:click={showModal}
         >Select Item</button>
       <!-- Plus button if thin -->

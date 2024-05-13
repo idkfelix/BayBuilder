@@ -5,9 +5,9 @@
   import Scene from '$lib/threejs/Scene.svelte';
 </script>
 
-<div class="relative min-w-full min-h-full shadow-2xl outline outline-4">
-  <a href="/" class="absolute m-2 right-2">
-    <button class="w-full btn">
+<div class="outline outline-4 relative max-w-[1000px] mx-auto min-h-full shadow-2xl">
+  <a href="/" class="right-2 absolute m-2">
+    <button class="btn w-full">
       Go Back
     </button>
   </a>

@@ -12,11 +12,11 @@
 </svelte:head>
 
 <Modal show={$modal}>
-  <div class="h-[100dvh] flex flex-col">
+  <div class="h-[100dvh] w-full flex flex-col items-center">
     <!-- Header -->
     <a href="/" class="flex items-center mx-auto mt-6">
       <img 
-          class="mr-4 w-14"
+          class="w-14 mr-4"
           src="https://cdn.fasttimes.com.au/media/mf_webp/png/media/logo/stores/1/fasttimes-logo.webp" 
       alt="">
       <h1 class="text-3xl font-bold">
@@ -24,12 +24,12 @@
       </h1>
     </a>
     <!-- Page -->
-    <main class="w-[800px] max-h-full mx-auto m-8 flex-grow">
+    <main class="flex-grow w-full max-h-full p-8">
       <slot/>
     </main>
     <!-- Footer -->
-    <footer class="m-4 mt-auto">
-        <p>Made with ❤️ by <a href="https://instagram.com/via.cityloop">Felix from Eastland</a></p>
+    <footer class="w-full px-4 m-4">
+        <p>Made with ❤️ by <a href="https://instagram.com/slappyloop">Felix from Eastland</a></p>
     </footer>
   </div>
 </Modal>
