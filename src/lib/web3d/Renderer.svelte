@@ -16,11 +16,13 @@
 
   const setupEffectComposer = (camera) => {
     composer.removeAllPasses()
-    composer.addPass(new RenderPass(scene, camera))
+    composer.addPass(
+      new RenderPass(scene, camera)
+    )
     composer.addPass(
       new EffectPass(camera,
         new BloomEffect({
-          intensity: 1,
+          intensity: 1.5,
           luminanceThreshold: 0.15,
           height: 512,
           width: 512,
@@ -33,7 +35,7 @@
     composer.addPass(
       new EffectPass(camera,
         new SMAAEffect({
-          preset: SMAAPreset.LOW
+          preset: SMAAPreset.MEDIUM
         })
       )
     )

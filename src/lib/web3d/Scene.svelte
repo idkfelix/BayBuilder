@@ -1,49 +1,47 @@
 <script>
   import { T } from '@threlte/core'
-  import { Sky, GLTF } from '@threlte/extras'
-  import { pieces, bayHeight } from '$lib/stores.js'
-
-  import Piece from '$lib/web3d/Piece.svelte';
-
-  $: _bayHeight = $bayHeight * 0.12
+  import { Sky, Align, OrbitControls } from '@threlte/extras'
+  import { DEG2RAD } from 'three/src/math/MathUtils'
+  import Bay from '$lib/web3d/Bay.svelte';
 </script>
 
+<!-- Camera -->
+<T.OrthographicCamera
+  makeDefault
+  position={[5, 4, 10]}
+  zoom={70}
+  far={30}
+>
+  <OrbitControls 
+    enableDamping
+    enablePan={false}
+    minAzimuthAngle={DEG2RAD *-60}
+    maxAzimuthAngle={DEG2RAD *60}
+    minPolarAngle={DEG2RAD *45}
+    maxPolarAngle={DEG2RAD *90}
+  />
+</T.OrthographicCamera>
+
+<!-- Lights -->
+<T.DirectionalLight
+  position={[-3, 3, 6]}
+  intensity={2}
+  castShadow
+/>
+
+<T.AmbientLight 
+  color={'#ffe6cc'}
+  intensity={2.5}
+  castShadow
+/>
+
 <Sky 
-  elevation={2.5} 
+  elevation={10} 
   azimuth={-45}
+  rayleigh={0.1}
 />
 
-<GLTF 
-  position.z={-0.3}
-  url={'/scene.glb'}
-  on:load={(gltf)=>{
-    gltf.scene.traverse(function(model){
-      if(model.isMesh){
-        model.castShadow = true
-        model.receiveShadow = true
-      }
-    })
-  }}
-/>
-
-{#each [-1.2,1.2] as x}
-  {@const poleHeight = (_bayHeight + 0.3)}
-  <T.Mesh
-    castShadow
-    receiveShadow
-    position={[x, poleHeight/2]}
-  >   
-    <T.CylinderGeometry args={[0.07, 0.07, poleHeight, 10]} />
-    <T.MeshStandardMaterial 
-      color={"#222"}
-      metalness={0.9}
-      roughness={0.1}
-    />
-  </T.Mesh>
-{/each}
-
-<T.Group position={[0, _bayHeight, 0.05]}>
-  {#each $pieces as p}
-    <Piece {p}/>
-  {/each}
-</T.Group>
+<!-- Bay -->
+<Align>
+  <Bay/>
+</Align>

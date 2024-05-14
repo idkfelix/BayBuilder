@@ -95,6 +95,20 @@ export const refs = [
   },
 ]
 
+export const pieceMenu = [
+  {
+    name: "Half Bar Shelf",
+    model: "/half-bar-shelf.glb",
+    nodes: [
+      {
+        name: "T-Shirt",
+        height: "18",
+        width: "0.5"
+      }
+    ]
+  }
+]
+
 export const initial = [
   {
     "name":"T-Shirt",
