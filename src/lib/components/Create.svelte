@@ -4,7 +4,7 @@
 
   let shown = {}
   const toggle = (group) => {
-    shown = []
+    if(!shown[group]){shown = []}
     shown[group] = !shown[group]
   }
 
@@ -13,6 +13,7 @@
       {
         ...node,
         name: group.noGroup ? node.name : group.name+' '+node.name,
+        icon: node.icon ?? group.icon,
         model: node.model ?? group.model,
         colour: `hsl(${Math.floor(Math.random() * 360)}, 40%, 70%)`,
         coord: {x: 0, y: 0},

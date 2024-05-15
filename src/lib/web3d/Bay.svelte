@@ -1,6 +1,6 @@
 <script>
   import { T } from '@threlte/core'
-  import { GLTF, Text } from '@threlte/extras'
+  import { GLTF } from '@threlte/extras'
   import { pieces, bayHeight } from '$lib/stores.js'
   import Piece from '$lib/web3d/Piece.svelte';
 
@@ -9,7 +9,7 @@
 
 <GLTF 
   position.z={-0.3}
-  url={'/scene.glb'}
+  url={'/models/scene.glb'}
   on:load={(gltf)=>{
     gltf.scene.traverse((model)=>{
       if(model.isMesh){

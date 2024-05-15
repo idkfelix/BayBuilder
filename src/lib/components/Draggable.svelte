@@ -27,33 +27,31 @@
 		position: p.coord,
     onDrag: ({ offsetX, offsetY }) => {p.coord = { x: offsetX, y: offsetY }},
 	}}
-  class="absolute text-center text-sm text-black flex flex-col {(p.width >= 0.5 && p.img) ? 'p-1' : 'p-0.5'}"
+  class="absolute flex flex-col p-0.5 overflow-hidden"
 	style="
 		height: {p.height * 10}px; 
 		width: {p.width * 240}px; 
 		background: {p.colour}
   "
 >
+  <!-- Remove Btn -->
   <button on:click|preventDefault={() => remove()}>
-    <img src="x.svg" class="absolute {(p.width >= 0.5 && p.img) ? "top-2 right-2 w-3" : "top-1 right-1 w-2"}" alt="">
+    <img src="x.svg" class="absolute w-2.5 top-1.5 right-1.5" alt="">
   </button>
-  {#if !p.img}
-    {#if p.width >= 0.5}
-      <p class="mr-4">{p.name}</p>
-    {/if}
-    {#if p.height > 2 && !p.noBtn}
-      {#if p.width >= 0.5}
-        <button
-          class="outline p-1 m-2 my-auto bg-white"
-          on:click={showModal}
-        >Select Item</button>
-      {:else}
-        <button class={(p.width < 0.2) ? "my-auto mr-auto" : "m-auto"} on:click={showModal}>
-          <img src="x.svg" class="w-2 rotate-45" alt="">
-        </button>
-      {/if}
-    {/if}
-  {:else}
-    <img src={p.img} alt="" class="object-cover min-h-full"/>
+  <!-- Icon -->
+  {#if p.icon}
+    <img src={p.icon} class="{(p.height > 2) ? "w-full" : "h-full"} mb-0.5" alt="">
+  {/if}
+  <!-- Product Select -->
+  {#if p.img && p.height > 2}
+    <div
+      style="background-image: url({p.img});"
+      class="flex-1 bg-center bg-repeat-x {(p.width > 0.5) ? "bg-contain" : "bg-cover"}"
+    />
+  {:else if p.height > 2 && !p.noBtn && p.width > 0.4}
+    <button
+      class="p-1 m-2 my-auto text-sm text-center text-black bg-white outline"
+      on:click={showModal}
+    >Select Item</button>
   {/if}
 </div>
