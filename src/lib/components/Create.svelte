@@ -7,11 +7,12 @@
     shown[group] = !shown[group]
   }
 
-  const add = (model, ref) => {
+  const add = (group, node) => {
     pieces.set([...$pieces, 
       {
-        ...ref,
-        model: model,
+        ...node,
+        name: group.noGroup ? node.name : group.name+' '+node.name,
+        model: node.model ?? group.model,
         colour: `hsl(${Math.floor(Math.random() * 360)}, 40%, 70%)`,
         coord: {x: 0, y: 0},
       }
@@ -36,7 +37,7 @@
           {#each group.nodes as node (node)}
             <button
               class="!bg-white !text-black !border-2 !border-black btn"
-              on:click={()=> add(node.model ?? group.model, node)}
+              on:click={()=> add(group, node)}
             > 
               {node.name} 
             </button>

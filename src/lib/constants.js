@@ -1,6 +1,7 @@
 export const pieceMenu = [
   {
     name: "Shelf",
+    noGroup: true,
     nodes: [
       {
         name: "Half Shelf",
@@ -13,6 +14,58 @@ export const pieceMenu = [
         model: "/full-shelf.glb",
         height: "2",
         width: "1"
+      },
+    ]
+  },
+  {
+    name: "Front Facing",
+    model: "/front.glb",
+    nodes: [
+      {
+        name: "T-Shirt",
+        height: "16",
+        width: "0.5"
+      },
+      {
+        name: "Hoodie",
+        height: "18",
+        width: "0.5"
+      },
+      {
+        name: "Pant",
+        height: "22",
+        width: "0.5"
+      },
+      {
+        name: "Short",
+        height: "12",
+        width: "0.5"
+      },
+    ]
+  },
+  {
+    name: "Waterfall",
+    model: "/waterfall.glb",
+    nodes: [
+      {
+        name: "T-Shirt",
+        height: "20",
+        width: "0.5"
+      },
+      {
+        name: "Hoodie",
+        height: "22",
+        width: "0.5"
+      },
+      {
+        name: "Pant",
+        height: "26",
+        width: "0.5"
+      },
+      {
+        name: "Short",
+        height: "16",
+        width: "0.5"
       },
     ]
   },
@@ -122,6 +175,7 @@ export const pieceMenu = [
   },
   {
     name: "Accessories",
+    noGroup: true,
     nodes: [
       { 
         name: 'Cage Grid', 
