@@ -7,8 +7,11 @@
 
 <div class="flex w-[800px] mx-auto">
   <Create/>
-  
-  <div class="min-w-[240px] min-h-[{$bayHeight * 10}px] outline outline-4 shadow-2xl bay grid justify-items-center" >
+
+  <div 
+    class="min-w-[240px] outline outline-4 shadow-2xl bay grid justify-items-center"
+    style="height: {$bayHeight*10}px;"
+  >
     {#each $pieces as p, index}
       <Draggable bind:p {index}/>
     {/each}
