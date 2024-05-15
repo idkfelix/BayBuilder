@@ -4,6 +4,7 @@
 
   let shown = {}
   const toggle = (group) => {
+    shown = []
     shown[group] = !shown[group]
   }
 
