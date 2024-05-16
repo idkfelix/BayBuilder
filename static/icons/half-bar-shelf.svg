@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104 33">
+  <defs>
+    <style>
+      .b {
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <polygon class="b" points="104 14 0 14 4 0 100 0 104 14"/>
+  <rect class="b" x="0" y="15" width="104" height="7"/>
+  <rect class="b" x="0" y="28" width="104" height="5"/>
+  <rect class="b" y="22" width="1" height="6"/>
+  <rect class="b" x="103" y="22" width="1" height="6"/>
+</svg>

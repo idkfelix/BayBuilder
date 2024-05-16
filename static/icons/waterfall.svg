@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102.72 34.05">
+  <defs>
+    <style>
+      .d {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 50;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <g id="b" data-name="Page-1">
+    <path id="c" data-name="Hanger" class="d" d="m45.64,7.3c0-3.19,2.61-5.8,5.8-5.8s5.71,2.61,5.71,5.8-5.71,4.45-5.71,7.74l-28.92,15.48c0,1.06.77,2.03,1.84,2.03h56c.97,0,1.84-.87,1.84-2.03l-28.92-14.41"/>
+  </g>
+  <g>
+    <rect class="d" x="1.5" y="10.82" width="38.5" height="1"/>
+    <line class="d" x1="1.5" y1="9.32" x2="1.5" y2="6.32"/>
+    <line class="d" x1="21" y1="9.32" x2="21" y2="6.32"/>
+    <line class="d" x1="40" y1="9.32" x2="40" y2="6.32"/>
+  </g>
+  <g>
+    <rect class="d" x="62.72" y="10.82" width="38.5" height="1"/>
+    <line class="d" x1="62.72" y1="9.32" x2="62.72" y2="6.32"/>
+    <line class="d" x1="82.22" y1="9.32" x2="82.22" y2="6.32"/>
+    <line class="d" x1="101.22" y1="9.32" x2="101.22" y2="6.32"/>
+  </g>
+</svg>

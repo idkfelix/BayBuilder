@@ -40,18 +40,20 @@
   </button>
   <!-- Icon -->
   {#if p.icon}
-    <img src={p.icon} class="{(p.height > 2) ? "w-full" : "h-full"} mb-0.5" alt="">
+    <img src={p.icon} class="{(p.height > 2) ? "w-full px-4 max-h-[25px]" : "h-full"} mb-1" alt="">
+  {:else if p.grid}
+    <div 
+      class="w-full h-full border-2 border-black" 
+      style="background: conic-gradient(from 90deg at 1px 1px,#0000 90deg,black 0) -7px -5px/25px 25px;"
+    />
   {/if}
   <!-- Product Select -->
   {#if p.img && p.height > 2}
-    <div
-      style="background-image: url({p.img});"
-      class="flex-1 bg-center bg-repeat-x {(p.width > 0.5) ? "bg-contain" : "bg-cover"}"
-    />
+    <img src={p.img} class="max-h-full m-auto rounded-sm" alt="">
   {:else if p.height > 2 && !p.noBtn && p.width > 0.4}
     <button
       class="p-1 m-2 my-auto text-sm text-center text-black bg-white outline"
       on:click={showModal}
-    >Select Item</button>
+    >Select {p.name}</button>
   {/if}
 </div>

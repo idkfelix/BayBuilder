@@ -12,7 +12,6 @@
     pieces.set([...$pieces, 
       {
         ...node,
-        name: group.noGroup ? node.name : group.name+' '+node.name,
         icon: node.icon ?? group.icon,
         model: node.model ?? group.model,
         colour: `hsl(${Math.floor(Math.random() * 360)}, 40%, 70%)`,

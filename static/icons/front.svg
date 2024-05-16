@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62.68 34.05">
+  <defs>
+    <style>
+      .d {
+        fill: none;
+        stroke: #000;
+        stroke-miterlimit: 50;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <g id="b" data-name="Page-1">
+    <path id="c" data-name="Hanger" class="d" d="m24.62,7.3c0-3.19,2.61-5.8,5.8-5.8s5.71,2.61,5.71,5.8-5.71,4.45-5.71,7.74L1.5,30.52c0,1.06.77,2.03,1.84,2.03h56c.97,0,1.84-.87,1.84-2.03l-28.92-14.41"/>
+  </g>
+</svg>

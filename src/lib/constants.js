@@ -5,14 +5,14 @@ export const pieceMenu = [
     nodes: [
       {
         name: "Half Shelf",
-        icon: "/icons/half-shelf.png",
+        icon: "/icons/half-shelf.svg",
         model: "/models/half-shelf.glb",
         height: 2,
         width: 0.5
       },
       {
         name: "Full Shelf",
-        icon: "/icons/full-shelf.png",
+        icon: "/icons/full-shelf.svg",
         model: "/models/full-shelf.glb",
         height: 2,
         width: 1
@@ -21,7 +21,7 @@ export const pieceMenu = [
   },
   {
     name: "Front Facing",
-    icon: "/icons/front.png",
+    icon: "/icons/front.svg",
     model: "/models/front.glb",
     nodes: [
       {
@@ -48,7 +48,7 @@ export const pieceMenu = [
   },
   {
     name: "Waterfall",
-    icon: "/icons/waterfall.png",
+    icon: "/icons/waterfall.svg",
     model: "/models/waterfall.glb",
     nodes: [
       {
@@ -75,7 +75,7 @@ export const pieceMenu = [
   },
   {
     name: "Half Bar Shelf",
-    icon: "/icons/half-bar-shelf.png",
+    icon: "/icons/half-bar-shelf.svg",
     model: "/models/half-bar-shelf.glb",
     nodes: [
       {
@@ -102,7 +102,7 @@ export const pieceMenu = [
   },
   {
     name: "Full Bar Shelf",
-    icon: "/icons/full-bar-shelf.png",
+    icon: "/icons/full-bar-shelf.svg",
     model: "/models/full-bar-shelf.glb",
     nodes: [
       {
@@ -129,7 +129,7 @@ export const pieceMenu = [
   },
   {
     name: "Half Bar",
-    icon: "/icons/half-bar.png",
+    icon: "/icons/half-bar.svg",
     model: "/models/half-bar.glb",
     nodes: [
       {
@@ -156,7 +156,7 @@ export const pieceMenu = [
   },
   {
     name: "Full Bar",
-    icon: "/icons/full-bar.png",
+    icon: "/icons/full-bar.svg",
     model: "/models/full-bar.glb",
     nodes: [
       {
@@ -186,8 +186,8 @@ export const pieceMenu = [
     noGroup: true,
     nodes: [
       { 
-        name: 'Cage Grid', 
-        icon: "/icons/cage.png",
+        name: 'Cage Grid',
+        grid: true,
         model: '/models/cage.glb',
         height: 20, 
         width: 0.5,
@@ -225,81 +225,4 @@ export const pieceMenu = [
 ]
 
 export const initial = [
-  {
-    "name": "Full Bar Shelf T-Shirt",
-    "height": 18,
-    "width": 1,
-    "icon": "/icons/full-bar-shelf.png",
-    "model": "/models/full-bar-shelf.glb",
-    "colour": "hsl(271, 40%, 70%)",
-    "coord": {
-      "x": 0,
-      "y": 420
-    },
-    "img": "https://cdn.fasttimes.com.au/media/catalog/product/cache/d5dc7326c4215340773195b00a886565/p/e/pearlsgrn.png"
-  },
-  {
-    "name": "Cage Grid",
-    "model": "/models/cage.glb",
-    "height": 20,
-    "width": 0.5,
-    "icon": "/icons/cage.png",
-    "noBtn": true,
-    "colour": "hsl(200, 40%, 70%)",
-    "coord": {
-      "x": -60,
-      "y": 220
-    }
-  },
-  {
-    "name": "Half Shelf",
-    "icon": "/icons/half-shelf.png",
-    "model": "/models/half-shelf.glb",
-    "height": 2,
-    "width": 0.5,
-    "colour": "hsl(335, 40%, 70%)",
-    "coord": {
-      "x": -60,
-      "y": 200
-    }
-  },
-  {
-    "name": "Waterfall T-Shirt",
-    "height": 20,
-    "width": 0.5,
-    "icon": "/icons/waterfall.png",
-    "model": "/models/waterfall.glb",
-    "colour": "hsl(252, 40%, 70%)",
-    "coord": {
-      "x": 60,
-      "y": 20
-    },
-    "img": "https://cdn.fasttimes.com.au/media/catalog/product/cache/d5dc7326c4215340773195b00a886565/p/e/pearls_og_crew_ice_marle_1.png"
-  },
-  {
-    "name": "Front Facing T-Shirt",
-    "height": 16,
-    "width": 0.5,
-    "icon": "/icons/front.png",
-    "model": "/models/front.glb",
-    "colour": "hsl(118, 40%, 70%)",
-    "coord": {
-      "x": -60,
-      "y": 20
-    },
-    "img": "https://cdn.fasttimes.com.au/media/catalog/product/cache/d5dc7326c4215340773195b00a886565/p/e/pearls-poodle-tshirt-black.png"
-  },
-  {
-    "name": "Waterfall T-Shirt",
-    "height": 20,
-    "width": 0.5,
-    "icon": "/icons/waterfall.png",
-    "model": "/models/waterfall.glb",
-    "colour": "hsl(121, 40%, 70%)",
-    "coord": {
-      "x": 60,
-      "y": 220
-    },
-    "img": "https://cdn.fasttimes.com.au/media/catalog/product/cache/d5dc7326c4215340773195b00a886565/p/e/pearls-og-tshirt-royal-white.png"
-  }
 ]

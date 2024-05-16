@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 208 20.47">
+  <defs>
+    <style>
+      .b {
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <rect class="b" x="0" y="15.47" width="208" height="5"/>
+  <g>
+    <polygon class="b" points="208 14 206 14 202 0 204 0 208 14"/>
+    <polygon class="b" points="205.24 14 203.24 14 201 5 201.24 0 205.24 14"/>
+  </g>
+  <g>
+    <polygon class="b" points="0 14 2 14 6 0 4 0 0 14"/>
+    <polygon class="b" points="2.76 14 4.76 14 7 5 6.76 0 2.76 14"/>
+  </g>
+</svg>
