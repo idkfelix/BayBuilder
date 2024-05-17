@@ -4,7 +4,7 @@
 </script>
 
 <h3 class="mb-2 text-2xl">
-  Manage Bay
+  Controls
 </h3>
 <div class="flex w-full px-4 py-2 m-1 font-medium text-white bg-black shadow">
   <span class="ml-auto">Bay Height:</span>
