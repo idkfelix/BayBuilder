@@ -15,7 +15,7 @@
 <Modal show={$modal}>
   <div class="h-[100dvh] w-full flex flex-col items-center">
     <a href="/" class="flex items-center mx-auto mt-6">
-      <img class="w-14 mr-4" alt="" src="https://cdn.fasttimes.com.au/media/mf_webp/png/media/logo/stores/1/fasttimes-logo.webp">
+      <img class="mr-4 w-14" alt="" src="https://cdn.fasttimes.com.au/media/mf_webp/png/media/logo/stores/1/fasttimes-logo.webp">
       <h1 class="text-3xl font-bold">Bay Builder</h1>
     </a>
     

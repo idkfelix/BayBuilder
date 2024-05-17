@@ -8,7 +8,6 @@
 	export let index
 
   const { open } = getContext('simple-modal')
-  
   const showModal = () => open(Search,{
     onOkay: (item) => {
       p.img = item.images[0].url
@@ -31,7 +30,8 @@
 	style="
 		height: {p.height * 10}px; 
 		width: {p.width * 240}px; 
-		background: {p.colour}
+		background: {p.colour};
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
   "
 >
   <!-- Remove Btn -->
@@ -40,7 +40,7 @@
   </button>
   <!-- Icon -->
   {#if p.icon}
-    <img src={p.icon} class="{(p.height > 2) ? "max-h-[25px]" : "h-full"} mb-1 px-4" alt="">
+    <img src={p.icon} class="{(p.height > 2) ? "max-h-[25px]" : "h-full"} mb-1 px-4 pointer-events-none" alt="">
   {:else if p.grid}
     <div 
       class="w-full h-full border-2 border-black" 
@@ -49,7 +49,7 @@
   {/if}
   <!-- Product Select -->
   {#if p.img && p.height > 2}
-    <img src={p.img} class="max-h-full m-auto rounded-sm" alt="">
+    <img src={p.img} class="max-h-full m-auto rounded-sm pointer-events-none" alt="">
   {:else if p.height > 2 && !p.noBtn && p.width > 0.4}
     <button
       class="p-1 m-2 my-auto text-sm text-center text-black bg-white outline"
