@@ -40,7 +40,7 @@
   </button>
   <!-- Icon -->
   {#if p.icon}
-    <img src={p.icon} class="{(p.height > 2) ? "w-full px-4 max-h-[25px]" : "h-full"} mb-1" alt="">
+    <img src={p.icon} class="{(p.height > 2) ? "max-h-[25px]" : "h-full"} mb-1 px-4" alt="">
   {:else if p.grid}
     <div 
       class="w-full h-full border-2 border-black" 
