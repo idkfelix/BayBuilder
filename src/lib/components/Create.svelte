@@ -21,7 +21,7 @@
   }
 </script>
 
-<h3 class="mb-2 text-2xl">
+<h3 class="mb-2 text-2xl font-bold text-center">
   Create New
 </h3>
 <div class="flex flex-col overflow-y-scroll scrollbar h-full max-h-[550px]">
@@ -46,4 +46,3 @@
     </div>
   {/each}
 </div>
-

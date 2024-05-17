@@ -2,20 +2,41 @@
   import { pieces, bayHeight } from '$lib/stores'
   import Draggable from '$lib/components/Draggable.svelte'
   import Create from '$lib/components/Create.svelte'
-  import Panel from '$lib/components/Panel.svelte';
+  import Panel from '$lib/components/Panel.svelte'
+
+  import { getContext } from 'svelte'
+  const { open } = getContext('simple-modal')
 </script>
 
 <div class="flex gap-6 max-w-[800px] mx-auto font-bold text-center">
   <div class="hidden w-full md:block max-w-64">
     <Create/>
   </div>
-  <div 
-    class="min-w-[240px] outline outline-4 shadow-2xl bay grid justify-items-center mx-auto sm:mr-0 md:mx-0"
-    style="height: {$bayHeight*10}px;"
-  >
-    {#each $pieces as p, index}
-      <Draggable bind:p {index}/>
-    {/each}
+  <div class="mx-auto sm:mr-0 md:mx-0 min-w-[240px]">
+    <!-- Editor -->
+    <div 
+      class="grid shadow-2xl outline outline-4 bay justify-items-center"
+      style="height: {$bayHeight*10}px;"
+    >
+      {#each $pieces as p, index}
+        <Draggable bind:p {index}/>
+      {/each}
+    </div>
+    <!-- Mobile Btns -->
+    <div class="flex w-full mt-2 sm:hidden">
+      <button 
+        class="w-full btn"
+        on:click={()=> open(Create)}
+      >
+        Create
+      </button>
+      <button 
+        class="w-full btn"
+        on:click={()=> open(Panel)}  
+      >
+        Controls
+      </button>
+    </div>
   </div>
   <div class="hidden w-full mr-auto sm:block max-w-64 md:mr-0">
     <Panel/>
