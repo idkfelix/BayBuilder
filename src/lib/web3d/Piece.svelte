@@ -1,11 +1,13 @@
 <script>
   import { T } from '@threlte/core'
-  import { GLTF } from '@threlte/extras';
+  import { GLTF, useGltf } from '@threlte/extras';
 
   export let p
 
   $: posY = p.coord.y /-10 *0.12
   $: posX = p.coord.x /100
+
+  const hanger = useGltf(p.itemModel ?? '/models/hanger.glb')
 </script>
 
 {#if p.model}
@@ -14,10 +16,12 @@
     url={p.model+'?'+Math.random()}
     scale={2}
     on:load={(gltf)=>{
-      gltf.scene.traverse(function(model){
-        if(model.isMesh){
-          model.castShadow = true
-          model.receiveShadow = true
+      gltf.scene.traverse(function(node){
+        if(node.isMesh){
+          node.castShadow = true
+          node.receiveShadow = true
+        } else if(!node.geometry && node.type == "Object3D"){
+          node.add($hanger.scene.clone())
         }
       })
     }}

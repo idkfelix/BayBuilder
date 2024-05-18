@@ -26,21 +26,25 @@ export const pieceMenu = [
     nodes: [
       {
         name: "T-Shirt",
+        itemModel: "/models/hanger.glb",
         height: 16,
         width: 0.5
       },
       {
         name: "Hoodie",
+        itemModel: "/models/hanger.glb",
         height: 18,
         width: 0.5
       },
       {
         name: "Pant",
+        itemModel: "/models/hanger-clip.glb",
         height: 22,
         width: 0.5
       },
       {
         name: "Short",
+        itemModel: "/models/hanger-clip.glb",
         height: 12,
         width: 0.5
       },

@@ -32,7 +32,6 @@
 <T.AmbientLight 
   color={'#ffe6cc'}
   intensity={2.5}
-  castShadow
 />
 
 <Sky 
