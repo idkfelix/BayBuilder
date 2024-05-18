@@ -7,10 +7,11 @@
   $: posY = p.coord.y /-10 *0.12
   $: posX = p.coord.x /100
 
-  const hanger = useGltf(p.itemModel ?? '/models/hanger.glb')
+  const hanger = useGltf(p.hanger ?? '/models/hanger.glb')
 </script>
 
 {#if p.model}
+  <!-- Piece -->
   <GLTF
     position={[posX,posY]}
     url={p.model+'?'+Math.random()}
@@ -20,12 +21,14 @@
         if(node.isMesh){
           node.castShadow = true
           node.receiveShadow = true
+        // Convert Emptys to Items
         } else if(!node.geometry && node.type == "Object3D"){
           node.add($hanger.scene.clone())
         }
       })
     }}
   />
+  <!-- Bar -->
   <T.Mesh 
     castShadow
     receiveShadow
