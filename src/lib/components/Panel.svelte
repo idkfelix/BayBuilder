@@ -1,6 +1,7 @@
 <script>
+  import { page } from '$app/stores';
+  import { enhance } from '$app/forms';
   import { pieces, bayHeight } from '$lib/stores'
-	import Share from '$lib/components/Share.svelte'
   import Create from '$lib/components/Create.svelte'
 
   import { getContext } from 'svelte';
@@ -29,4 +30,15 @@
   Create
 </button>
 
-<Share />
+<form method="POST" use:enhance>
+  <input type="hidden" name="pieces" value={JSON.stringify($pieces)}>
+  <button class="w-full btn !bg-blue-500" type="submit">
+    New Share Link
+    <a class="hidden" let:this={dl} href="/">Hidden</a>
+  </button>
+</form>
+
+<input class="btn !bg-white !border-2 border-black w-full !text-black" 
+  disabled type="text"
+  value={$page?.form?.id ? $page.url.origin+'/'+$page?.form?.id : ''}
+>

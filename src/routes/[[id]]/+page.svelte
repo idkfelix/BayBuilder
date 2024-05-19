@@ -1,11 +1,15 @@
 <script>
+  import { getContext } from 'svelte'
   import { pieces, bayHeight } from '$lib/stores'
   import Draggable from '$lib/components/Draggable.svelte'
   import Create from '$lib/components/Create.svelte'
   import Panel from '$lib/components/Panel.svelte'
-
-  import { getContext } from 'svelte'
   const { open } = getContext('simple-modal')
+
+  export let data
+  if(data?.pieces){
+    pieces.set(data.pieces)
+  }
 </script>
 
 <div class="flex gap-6 max-w-[800px] mx-auto font-bold text-center">
@@ -39,7 +43,7 @@
     </div>
   </div>
   <div class="hidden w-full mr-auto sm:block max-w-64 md:mr-0">
-    <Panel/>
+    <Panel/>   
   </div>
 </div>
 
