@@ -24,21 +24,23 @@
   </button>
 </a>
 <button
-  class="block w-full btn md:hidden"
+  class="btn md:hidden block w-full"
   on:click={()=> open(Create)}
 >
   Create
 </button>
 
-<form method="POST" use:enhance>
-  <input type="hidden" name="pieces" value={JSON.stringify($pieces)}>
-  <button class="w-full btn !bg-blue-500" type="submit">
-    New Share Link
-    <a class="hidden" let:this={dl} href="/">Hidden</a>
-  </button>
-</form>
-
-<input class="btn !bg-white !border-2 border-black w-full !text-black" 
-  disabled type="text"
-  value={$page?.form?.id ? $page.url.origin+'/'+$page?.form?.id : ''}
->
+{#if !$page?.form?.id}
+  <form method="POST" use:enhance>
+    <input type="hidden" name="pieces" value={JSON.stringify($pieces)}>
+    <button class="w-full btn !bg-blue-500" type="submit">
+      New Share Link
+      <a class="hidden" let:this={dl} href="/">Hidden</a>
+    </button>
+  </form>
+{:else}
+  <input class="btn !bg-white !border-2 border-blue-500 w-full !text-black" 
+    disabled type="text"
+    value={$page.url.origin+'/'+$page?.form?.id}
+  >
+{/if}
