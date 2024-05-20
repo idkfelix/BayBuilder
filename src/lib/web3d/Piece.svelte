@@ -55,9 +55,8 @@
       position={[p.width*-1.2+(posX < 0 ? -1.5:1.5), posY/6]}
       scale={showHTML ? 0.4 : 0}
       zIndexRange={[0,0]}
-      castShadow
     >
-      <Draggable bind:p />
+      <Draggable bind:p noDrag/>
     </HTML>
   {/if}
 {/if}
