@@ -6,7 +6,7 @@ import { error } from '@sveltejs/kit';
 const kv = createClient({url: KV_REST_API_URL, token: KV_REST_API_TOKEN})
 const ratelimit = new Ratelimit({
   redis: kv,
-  limiter: Ratelimit.slidingWindow(5, "15 s"),
+  limiter: Ratelimit.slidingWindow(1, "10s"),
 });
 
 export const load = async ({ params }) => {
@@ -19,13 +19,15 @@ export const actions = {
   default: async ({request, getClientAddress}) => {
     const ip = getClientAddress();
     const rateLimitAttempt = await ratelimit.limit(ip);
-    if (!rateLimitAttempt.success) {
+    if(!rateLimitAttempt.success) {
       error(429, {message: 'Too many requests'})
     }
 
     const data = await request.formData()
     const pieces = data.get('pieces')
     const id = crypto.randomUUID()
+
+    if(pieces.length > 2500){error(413, {message: 'Content too large'})}
 
     const res = await kv.set(`pieces:${id}`, pieces)
     return {success: res ? true:false, id}
