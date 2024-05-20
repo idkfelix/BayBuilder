@@ -14,7 +14,7 @@
 <!-- Title -->
 <input 
   type="text" bind:value={$title}
-  class="w-full px-2 py-1 m-1 mb-2 text-xl font-semibold text-center text-black bg-white border-2 border-black"
+  class="w-full px-2 py-1 m-1 text-xl font-medium text-center text-black bg-white border-2 border-black"
 >
 <!-- 3D Mode -->
 <a href="/preview"> 
