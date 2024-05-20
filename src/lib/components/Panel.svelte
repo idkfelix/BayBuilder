@@ -1,7 +1,7 @@
 <script>
   import { page } from '$app/stores';
   import { enhance } from '$app/forms';
-  import { pieces, bayHeight } from '$lib/stores'
+  import { pieces, bayHeight, title } from '$lib/stores'
   import Create from '$lib/components/Create.svelte'
 
   import { getContext } from 'svelte';
@@ -9,8 +9,12 @@
 </script>
 
 <h3 class="mb-2 text-2xl font-bold text-center">
-  Controls
+  Bay Controls
 </h3>
+<input 
+  type="text" bind:value={$title}
+  class="w-full px-2 py-1 m-1 mb-2 text-xl font-semibold text-center text-black bg-white border-2 border-black"
+>
 <div class="flex w-full px-4 py-2 m-1 font-medium text-white bg-black shadow">
   <span class="ml-auto">Bay Height:</span>
   <input class="w-12 px-1 ml-2 mr-auto text-black bg-white rounded-sm" type="number" bind:value={$bayHeight}>
@@ -24,14 +28,21 @@
   </button>
 </a>
 <button
-  class="btn md:hidden block w-full"
+  class="block w-full btn md:hidden"
   on:click={()=> open(Create)}
 >
   Create
 </button>
 
-{#if !$page?.form?.id}
+{#if $page.data.linked}
+<input class="btn !bg-white !border-2 border-blue-500 w-full !text-black" 
+  disabled type="text"
+  value={$page.url}
+>
+{:else if !$page?.form?.id}
   <form method="POST" use:enhance>
+    <input type="hidden" name="title" value={$title}>
+    <input type="hidden" name="height" value={$bayHeight}>
     <input type="hidden" name="pieces" value={JSON.stringify($pieces)}>
     <button class="w-full btn !bg-blue-500" type="submit">
       New Share Link

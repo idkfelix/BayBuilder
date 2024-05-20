@@ -11,8 +11,8 @@ const ratelimit = new Ratelimit({
 
 export const load = async ({ params }) => {
   if(!params.id){return {}}
-  const pieces = await kv.get(`pieces:${params.id}`)
-	return {pieces};
+  const config = await kv.get(`config:${params.id}`)
+	return {config, linked:true};
 }
 
 export const actions = {
@@ -24,12 +24,14 @@ export const actions = {
     }
 
     const data = await request.formData()
+    const title = data.get('title')
+    const height = data.get('height')
     const pieces = data.get('pieces')
     const id = crypto.randomUUID()
 
     if(pieces.length > 2500){error(413, {message: 'Content too large'})}
 
-    const res = await kv.set(`pieces:${id}`, pieces)
+    const res = await kv.set(`config:${id}`, {title, height, pieces})
     return {success: res ? true:false, id}
   }
 };

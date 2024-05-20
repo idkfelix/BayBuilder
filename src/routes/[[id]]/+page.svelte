@@ -1,16 +1,22 @@
 <script>
   import { getContext } from 'svelte'
-  import { pieces, bayHeight } from '$lib/stores'
+  import { pieces, bayHeight, title } from '$lib/stores'
   import Draggable from '$lib/components/Draggable.svelte'
   import Create from '$lib/components/Create.svelte'
   import Panel from '$lib/components/Panel.svelte'
   const { open } = getContext('simple-modal')
 
   export let data
-  if(data?.pieces){
-    pieces.set(data.pieces)
+  if(data?.config){
+    title.set(data.config.title)
+    bayHeight.set(data.config.height)
+    pieces.set(JSON.parse(data.config.pieces))
   }
 </script>
+
+<svelte:head>
+  <title>{$title}</title>
+</svelte:head>
 
 <div class="flex gap-6 max-w-[800px] mx-auto font-bold text-center">
   <div class="hidden w-full md:block max-w-64">
