@@ -27,7 +27,7 @@
 		position: p.coord,
     onDrag: ({ offsetX, offsetY }) => {p.coord = { x: offsetX, y: offsetY }},
 	}}
-  class="absolute flex flex-col p-0.5 overflow-hidden"
+  class="absolute flex flex-col p-0.5 overflow-hidden justify-self-center"
 	style="
 		height: {p.height * 10}px; 
 		width: {p.width * 240}px; 

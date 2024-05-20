@@ -25,7 +25,7 @@
   <div class="mx-auto sm:mr-0 md:mx-0 min-w-[240px]">
     <!-- Editor -->
     <div 
-      class="grid shadow-2xl outline outline-4 bay justify-items-center"
+      class="grid shadow-2xl outline outline-4 bay"
       style="height: {$bayHeight*10}px;"
     >
       {#each $pieces as p, index}
