@@ -5,7 +5,7 @@
   import Search from '$lib/components/Search.svelte'
 
 	export let p
-	export let index
+	export let index = null
 
   const { open } = getContext('simple-modal')
   const showModal = () => open(Search,{
@@ -21,6 +21,7 @@
 
 <div 
 	use:draggable={{ 
+    ...(!index && {disabled: true}),
 		grid: [10, 10], 
 		bounds: 'parent',
 		position: p.coord,
@@ -35,9 +36,11 @@
   "
 >
   <!-- Remove Btn -->
-  <button on:click|preventDefault={() => remove()}>
-    <img src="x.svg" class="absolute w-2.5 top-1.5 right-1.5" alt="">
-  </button>
+  {#if index}
+    <button on:click|preventDefault={() => remove()}>
+      <img src="x.svg" class="absolute w-2.5 top-1.5 right-1.5" alt="">
+    </button>
+  {/if}
   <!-- Icon -->
   {#if p.icon}
     <img src={p.icon} class="{(p.height > 2) ? "max-h-[25px]" : "h-full"} mb-1 px-4 pointer-events-none" alt="">

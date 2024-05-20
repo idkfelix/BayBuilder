@@ -1,8 +1,10 @@
 <script>
   import { T } from '@threlte/core'
-  import { Sky, Align, OrbitControls } from '@threlte/extras'
+  import { Sky, Align, OrbitControls, interactivity } from '@threlte/extras'
   import { DEG2RAD } from 'three/src/math/MathUtils'
   import Bay from '$lib/web3d/Bay.svelte';
+  
+  interactivity()
 </script>
 
 <!-- Camera -->

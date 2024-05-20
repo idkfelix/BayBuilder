@@ -24,8 +24,8 @@
   scale={4}
   anchorX={'center'}
   anchorY={'bottom'}
-  position.y={_bayHeight+0.3}
-  position.z={-0.2}
+  position.y={_bayHeight+1}
+  position.z={-0.3}
 />
 
 {#each [-1.2,1.2] as x}
@@ -46,6 +46,6 @@
 
 <T.Group position={[0, _bayHeight, 0.05]}>
   {#each $pieces as p}
-    <Piece {p}/>
+    <Piece bind:p/>
   {/each}
 </T.Group>
