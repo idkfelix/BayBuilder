@@ -1,7 +1,7 @@
 <script>
   import { T } from '@threlte/core'
-  import { GLTF } from '@threlte/extras'
-  import { pieces, bayHeight } from '$lib/stores.js'
+  import { GLTF, Text } from '@threlte/extras'
+  import { pieces, bayHeight, title } from '$lib/stores.js'
   import Piece from '$lib/web3d/Piece.svelte';
 
   $: _bayHeight = $bayHeight * 0.12
@@ -17,6 +17,15 @@
       }
     })
   }}
+/>
+
+<Text 
+  text={$title} 
+  scale={4}
+  anchorX={'center'}
+  anchorY={'bottom'}
+  position.y={_bayHeight+0.3}
+  position.z={-0.2}
 />
 
 {#each [-1.2,1.2] as x}

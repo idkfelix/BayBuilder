@@ -36,7 +36,7 @@
 
 <Sky 
   elevation={10} 
-  azimuth={-45}
+  azimuth={-10}
   rayleigh={0.1}
 />
 
