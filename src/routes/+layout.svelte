@@ -19,11 +19,11 @@
       <h1 class="text-3xl font-bold">Bay Builder</h1>
     </a>
     
-    <main class="flex-grow w-full max-h-full p-8">
+    <main class="flex-grow w-full max-h-full p-4 sm:p-8">
       <slot/>
     </main>
 
-    <footer class="w-full px-4 m-4">
+    <footer class="block w-full px-4 m-4">
         <p>Made with ❤️ by <a href="https://instagram.com/slappyloop">Felix from Eastland</a></p>
     </footer>
   </div>
