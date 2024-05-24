@@ -20,6 +20,7 @@
 	"type": "module",
 	"dependencies": {
 		"@neodrag/svelte": "^2.0.6",
+		"@paralleldrive/cuid2": "^2.2.2",
 		"@threlte/core": "^7.3.0",
 		"@threlte/extras": "^8.11.2",
 		"@upstash/ratelimit": "^1.1.3",

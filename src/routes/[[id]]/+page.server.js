@@ -2,6 +2,7 @@ import { KV_REST_API_TOKEN, KV_REST_API_URL } from '$env/static/private'
 import { createClient } from "@vercel/kv";
 import { Ratelimit } from "@upstash/ratelimit";
 import { error } from '@sveltejs/kit';
+import { init } from '@paralleldrive/cuid2';
 
 const kv = createClient({url: KV_REST_API_URL, token: KV_REST_API_TOKEN})
 const ratelimit = new Ratelimit({
@@ -27,7 +28,7 @@ export const actions = {
     const title = data.get('title')
     const height = data.get('height')
     const pieces = data.get('pieces')
-    const id = crypto.randomUUID()
+    const id = init({length: 6})()
 
     if(pieces.length > 2500){error(413, {message: 'Content too large'})}
 
