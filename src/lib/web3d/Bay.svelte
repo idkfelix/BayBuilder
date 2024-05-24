@@ -24,7 +24,7 @@
   scale={4}
   anchorX={'center'}
   anchorY={'bottom'}
-  position.y={_bayHeight+1}
+  position.y={8.2}
   position.z={-0.3}
 />
 

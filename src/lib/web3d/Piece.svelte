@@ -6,7 +6,7 @@
   export let p
   let showHTML = false
 
-  const hanger = useGltf(p.hanger ?? '/models/hanger.glb')
+  const hanger = useGltf((p.hanger ?? '/models/hanger.glb')+'?'+Math.random())
   $: posY = p.coord.y /-10 *0.12
   $: posX = p.coord.x /100
 
