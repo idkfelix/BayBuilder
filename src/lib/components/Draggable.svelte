@@ -1,5 +1,6 @@
 <script>
 	import { draggable } from '@neodrag/svelte';
+  import { useLazyImage } from 'svelte-lazy-image';
   import { getContext } from 'svelte';
   import { pieces } from '$lib/stores'
   import Search from '$lib/components/Search.svelte'
@@ -51,7 +52,7 @@
   {/if}
   <!-- Product Select -->
   {#if p.img && p.height > 2}
-    <img src={p.img} class="max-h-full m-auto border-2 border-black rounded-sm pointer-events-none" alt="">
+    <img data-src={p.img} use:useLazyImage class="max-h-full m-auto border-2 border-black rounded-sm pointer-events-none" alt="">
   {:else if p.height > 2 && !p.noBtn && p.width > 0.4}
     <button
       class="p-1 m-2 my-auto text-sm text-center text-black bg-white outline"

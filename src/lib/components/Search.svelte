@@ -1,5 +1,6 @@
 <script>
   import InfiniteScroll from "svelte-infinite-scroll";
+  import { useLazyImage } from 'svelte-lazy-image';
   import { getContext } from 'svelte';
   const { close } = getContext('simple-modal');
 	
@@ -13,7 +14,7 @@
     let url = 'https://fasttimes.com.au/rest/V1/products-render-info?' + new URLSearchParams({
       'currencyCode': 'AUD',
       'storeId': 1,
-      'searchCriteria[pageSize]': 20,
+      'searchCriteria[pageSize]': 50,
       'searchCriteria[currentPage]': page,
       'fields': 'items[name,images[url]]',
     })
@@ -60,13 +61,13 @@
     <div class="w-full max-h-[70dvh] my-4 py-4 overflow-y-scroll">
       {#each items as item}
         <button
-          class="max-w-44 mx-2"
+          class="mx-2 max-w-44"
           on:click={() => {
             onOkay(item)
             close()
           }}
         >
-          <img src={item.images[0].url} alt=""/>
+          <img use:useLazyImage data-src={item.images[0].url} alt=""/>
           <p>{item.name}</p>
         </button>
       {/each}
