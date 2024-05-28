@@ -13,27 +13,29 @@
 </script>
 
 {#if p.model}
-  <!-- Piece -->
-  <GLTF
+  <T.Mesh dispose
     position={[posX,posY]}
-    url={p.model+'?'+Math.random()}
-    scale={2}
-    on:click={(e) => {
-      e.stopPropagation()
-      showHTML = !showHTML
-    }}
-    on:load={(gltf)=>{
-      gltf.scene.traverse(function(node){
-        if(node.isMesh){
-          node.castShadow = true
-          node.receiveShadow = true
-        // Convert Emptys to Items
-        } else if(!node.geometry && node.type == "Object3D"){
-          node.add($hanger.scene.clone())
-        }
-      })
-    }}
-  />
+  >
+    <GLTF
+      url={p.model+'?'+Math.random()}
+      scale={2}
+      on:click={(e) => {
+        e.stopPropagation()
+        showHTML = !showHTML
+      }}
+      on:load={(gltf)=>{
+        gltf.scene.traverse(function(node){
+          if(node.isMesh){
+            node.castShadow = true
+            node.receiveShadow = true
+          // Convert Emptys to Items
+          } else if(!node.geometry && node.type == "Object3D"){
+            node.add($hanger.scene.clone())
+          }
+        })
+      }}
+    />
+  </T.Mesh>
   <!-- Bar -->
   <T.Mesh 
     castShadow
