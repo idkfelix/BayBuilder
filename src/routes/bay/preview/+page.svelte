@@ -21,7 +21,7 @@
     </div>
   {/if}
 
-  <a href="/" class="absolute m-2 right-2">
+  <a href="/bay" class="absolute m-2 right-2">
     <button class="w-full btn">
       Go Back
     </button>

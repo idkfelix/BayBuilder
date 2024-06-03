@@ -17,7 +17,7 @@
   class="w-full px-2 py-1 m-1 text-xl font-medium text-center text-black bg-white border-2 border-black"
 >
 <!-- 3D Mode -->
-<a href="/preview"> 
+<a href="/bay/preview"> 
   <button class="btn w-full !bg-teal-600">
     3D Preview
   </button>
@@ -58,6 +58,6 @@
 {:else}
   <input class="btn !bg-white !border-2 border-blue-500 w-full !text-black" 
     disabled type="text"
-    value={$page.url.origin+'/'+$page?.form?.id}
+    value={$page.url.origin+'/bay/'+$page?.form?.id}
   >
 {/if}
