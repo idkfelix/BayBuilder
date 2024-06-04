@@ -1,10 +1,8 @@
 <script>
   import { T } from '@threlte/core'
   import { GLTF, useGltf, HTML } from '@threlte/extras';
-  import Draggable from '$lib/components/Draggable.svelte'
 
   export let p
-  let showHTML = false
 
   const hanger = useGltf((p.hanger ?? '/models/hanger.glb')+'?'+Math.random())
   $: posY = p.coord.y /-10 *0.12
@@ -19,10 +17,6 @@
     <GLTF
       url={p.model+'?'+Math.random()}
       scale={2}
-      on:click={(e) => {
-        e.stopPropagation()
-        showHTML = !showHTML
-      }}
       on:load={(gltf)=>{
         gltf.scene.traverse(function(node){
           if(node.isMesh){
@@ -49,16 +43,4 @@
       roughness={0.1}
     />
   </T.Mesh>
-
-  <!-- Temp Popover -->
-  {#if p.height > 2}
-    <HTML
-      transform
-      position={[p.width*-1.2+(posX < 0 ? -1.5:1.5), posY/6]}
-      scale={showHTML ? 0.4 : 0}
-      zIndexRange={[0,0]}
-    >
-      <Draggable bind:p noDrag/>
-    </HTML>
-  {/if}
 {/if}

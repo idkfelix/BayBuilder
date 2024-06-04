@@ -1,3 +1,8 @@
+
+<svelte:head>
+  <title>FTT+ Home</title>
+</svelte:head>
+
 <div class="flex items-center justify-center h-screen">
   <div class="flex flex-col w-full p-5 border-2 border-black shadow-2xl max-w-96">
     <div class="flex gap-4 mx-auto mb-4">

@@ -1,4 +1,5 @@
 <script> 
+  import { title } from '$lib/stores'
   import { setContext } from 'svelte';
   import { writable } from 'svelte/store';
   import Modal from "svelte-simple-modal";
@@ -7,7 +8,7 @@
 </script>
 
 <svelte:head>
-  <link rel="shortcut icon" href="https://cdn.fasttimes.com.au/media/favicon/stores/1/fast-times-icon.ico" type="image/x-icon">
+  <title>FTT+ {$title}</title>
 </svelte:head>
 
 <Modal show={$modal}>

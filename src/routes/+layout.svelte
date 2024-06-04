@@ -2,6 +2,10 @@
   import '../app.css'
 </script>
 
+<svelte:head>
+  <link rel="shortcut icon" href="https://cdn.fasttimes.com.au/media/favicon/stores/1/fast-times-icon.ico" type="image/x-icon">
+</svelte:head>
+
 <slot/>
 
 <style lang="postcss">

@@ -1,7 +1,7 @@
 <script>
   import { getContext } from 'svelte'
   import { pieces, bayHeight, title } from '$lib/stores'
-  import Draggable from '$lib/components/Draggable.svelte'
+  import BayPiece from '$lib/components/BayPiece.svelte'
   import Create from '$lib/components/Create.svelte'
   import Panel from '$lib/components/Panel.svelte'
   const { open } = getContext('simple-modal')
@@ -14,10 +14,6 @@
   }
 </script>
 
-<svelte:head>
-  <title>{$title}</title>
-</svelte:head>
-
 <div class="flex gap-6 max-w-[800px] mx-auto font-bold text-center">
   <div class="hidden w-full md:block max-w-64">
     <Create/>
@@ -29,7 +25,7 @@
       style="height: {$bayHeight*10}px;"
     >
       {#each $pieces as p, index}
-        <Draggable bind:p {index}/>
+        <BayPiece bind:p {index}/>
       {/each}
     </div>
     <!-- Mobile Btns -->
